@@ -21,6 +21,7 @@ public class GameProgress implements Serializable {
         this.distance = distance;
     }
 
+    // Методы для задачи 2. Сохранение;
     public static void saveGame(String filePath, GameProgress gameProgress) {
         try (FileOutputStream fos = new FileOutputStream(filePath);
              ObjectOutputStream oos = new ObjectOutputStream(fos)) {
@@ -50,7 +51,9 @@ public class GameProgress implements Serializable {
             System.out.println(ex.getMessage());
         }
     }
+    // Методы для задачи 2. Сохранение.
 
+    // Методы для задачи 3. Загрузка;
     public static void openZip(String zipFilePath, String unzipLocationPath) {
         try (ZipInputStream zin = new ZipInputStream(new
                 FileInputStream(zipFilePath))) {
@@ -83,6 +86,7 @@ public class GameProgress implements Serializable {
         }
         System.out.println(gameProgress);
     }
+    // Методы для задачи 3. Загрузка.
 
     @Override
     public String toString() {
