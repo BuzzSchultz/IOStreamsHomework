@@ -1,4 +1,4 @@
-package ru.Homeworks.A_Batsanov;
+package ru.homeworks.abatsanov;
 
 import java.io.*;
 import java.util.List;
@@ -76,7 +76,7 @@ public class GameProgress implements Serializable {
         }
     }
 
-    public static void openProgress(String filePath) {
+    public static GameProgress openProgress(String filePath) {
         GameProgress gameProgress = null;
         try (FileInputStream fis = new FileInputStream(filePath);
              ObjectInputStream ois = new ObjectInputStream(fis)) {
@@ -84,7 +84,7 @@ public class GameProgress implements Serializable {
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
-        System.out.println(gameProgress);
+        return gameProgress;
     }
     // Методы для задачи 3. Загрузка.
 
